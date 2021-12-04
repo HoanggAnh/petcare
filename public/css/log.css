@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------------------------Trang đăng nhập bằng popup---------------------------------*/
+#dangnhap,#dangky{
+	cursor:pointer;
+}
+.hover-dangnhap{
+	display:block;
+}
+.dangnhap-popup {
+	display:none;
+	position: fixed;
+	z-index: 100;
+	padding-top: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+
+}
+
+.dangnhap-noidung {
+	position: relative;
+	background-color: rgba(0,178,191,0.7);
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 720px;
+	height: 85%;
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+.layMK-noidung{
+	position: relative;
+	background-color: #51C7FF;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 350px;
+	height:250px;
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+.layMK-popup{
+	display:none;
+	position: fixed;
+	z-index: 100;
+	padding-top: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+@-webkit-keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
+}
+
+.close{
+	position:absolute;
+	color: #000;
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	border-radius:15px;
+	background:#CCC;
+	width:30px;
+	height:30px;
+	top:-15px;
+	right:-15px;
+	text-align:center;
+	box-shadow:-1px 1px 2px #333333;
+	padding-bottom:0.1%;
+}
+
+.close:hover,.close:focus{
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.img-dangNhap{
+	width:38%;
+	float:left;
+	border-radius:20px;
+	height:510px;
+	background:#FFF;
+	margin:10px;
+}
+.box-input{
+	float:left;
+	background:#FFF;
+	border-radius:20px;
+	margin:10px;
+	height: 510px;
+	width: 400px;
+}
+.formatForm input {
+	padding: 8px 10px 8px;
+	border: solid 1px #999;
+	margin-right: 20px;
+	width: 200px;
+	margin-bottom:10px;
+
+}
+
+#imglogin{
+	position:relative;
+	left:-50px;
+	overflow:hidden;
+	width: 220px;
+	height: 230px;
+}
+
+#dky{
+	display:none;
+}
+
+#tabDangNhap,#tabDangKy{
+	float:left;
+	margin-right:20px;
+	margin-left:20px;
+}
+#pass-not,#email-not,#emailDK-not,#name-not,#passDK-not,#phone-not,#email-tpass-not{
+	color: red;
+}
+.lineDN{
+	margin-left:20px;
+	margin-top:15px;
+}
+.lineDN .lblEmail,.lblPass,.lblPhone,.lblName{
+	min-width:90px;
+	float:left;
+	padding-top:8px;
+}
+.lineDN .txtEmail,.txtPass,.txtName,.txtPhone{
+	float:left;
+}
+.lineDN small{
+	margin-left:90px;
+}
+.lineDN button{
+	margin-left:90px;
+	height:35px;
+
+}
+#nhanDangNhap,#nhanDangKy{
+	margin-left:20px;
+	margin-top:10px;
+	font-size:24px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#F60;
+}
+
+.imgTuongTrung img{
+	width:350px;
+	height:350px;
+	margin-top:90px;
+	margin-left:70px;
+}
+#nhanDangKy{
+	display:none;
+}
+.tieudeLayMK{
+	margin:10px;
+	font-size:24px;
+	color:#F00;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.layMK-noidung{
+	background-color:#FFF;
+
+}
+.motaLayMK{
+	margin:10px;
+}
+.layMK-noidung button,small{
+	margin-left:0;
+}
+.layMK-noidung input{
+	margin-top:5px;
+}
