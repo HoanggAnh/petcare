@@ -1,65 +1,115 @@
-<?php session_start()?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+include 'header.php';
+include 'navtotal.php';
+include 'inc/config.php';
+?>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>.:PetShop:.</title>
-	<link href="public/css/cssindex.css" rel="stylesheet" type="text/css"/>
-	<link href="public/css/header.css" rel="stylesheet" type="text/css"/>
-	<link href="public/css/log.css" rel="stylesheet" type="text/css"/>
-</head>
 
-<body bgcolor="#F7F7F7">
-	<div id="container">
-		<button onclick="topFunction()" id="goHome" title="Về đầu trang"><img src="images/icon/arrow-up.png"/></button>
-		<div id="header">
-			<?php include("header.php")?>
-			<div style="clear: both"></div>
-		</div>
-		<!-------Phần menu-->
-		<?php include("menu.php")?>
-		<!-----------content----------------->
-		<div class="content">
-			<div class="slider">
-				<figure>
-					<img src="banner/sld-1.jpg" alt=""/>
-					<img src="banner/sld-2.jpg" alt=""/>
-					<img src="banner/sld-3.jpg" alt=""/>
-					<img src="banner/sld-4.jpg" alt=""/>
-					<img src="banner/sld-5.jpg" alt=""/>
-				</figure>
+
+
+<!-- Carousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style=" max-width: 80%; margin-left:130px; margin-top:50px">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	</div>
+	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/ban1.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban2.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban3.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban4.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban5.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban6.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban7.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="images/ban8.jpg" class="d-block w-100" alt="...">
 			</div>
 		</div>
-		<!----------------------------------------------sidebar-right---------------------------------------------->
-
-		<div class="sidebar-right">
-			<a href=""><img src="Hình/sanphamnb1.jpg" alt=""/></a>
-			<br/><br/>
-			<a href=""><img src="Hình/sanphamnb2.jpg" alt=""/></a>
-		</div>
-		<div style="clear:both"></div>
-
-		<!----------------------------------------------menu danh sách----------------------------------------->
-
-		<div class="danhsach" >
-			<?php inBangThu($link);?>
-		</div>
-        <div class="right-qc">
-            <div class="quangcao"><a href="#"><img src="banner/1.jpg" /></a></div>
-            <div class="quangcao"><a href="chitietsp.php?idSP=30"><img src="banner/2.jpg" /></a></div>
-            <div class="quangcao"><a href="sanpham.php?idCL=CL01"><img src="banner/3.jpg" /></a></div>
-            <div class="quangcao"><a href="chitietsp.php?idSP=30"><img src="banner/4.jpg" /></a></div>
-        </div>
-		<!--Đây là phần cuối-->
-		<div class="Footer">
-			<?php include("footer.php")?>
-		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
 	</div>
 
 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="card-header text-center" style="background-color: #323741;font-size: 17px; color: #fcc39b; border-radius: 30px; margin-top: 50px; margin-bottom:20px"><i class="fas fa-paw"></i> PRODUCT ON SALE <i class="fas fa-paw"></i></div>
+			<div class="col-lg-12">
 
-<script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="public/js/events.js"></script>
+
+				<div class="products">
+					<?php
+					require 'inc/truyvan.php';
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while ($row = $result->fetch_assoc()) {
+
+					?>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+								<div class="product">
+									<div class="image"><a href="product.php?id=<?php echo $row["ID"] ?>"><img src="images/<?php echo $row["HinhAnh"] ?>" style="width:250px;height:250px;" /></a></div>
+									<div class="caption">
+										<div class="name">
+											<h3><a style='color: #f3906c' href="product.php?id=<?php echo $row["ID"] ?>"><?php echo $row["Ten"] ?></a></h3>
+										</div>
+										<?php
+										if ($row["KhuyenMai"] == true) {
+										?>
+											<div class="price" style="color: red; font-size: 2rem"><span style="font-size: 14px; color: grey"><?php echo $row["Gia"] ?>,000₫ <i class="fas fa-arrow-right"></i></span><?php echo $row["giakhuyenmai"] ?>,000₫ </div>
+										<?php
+										}
+										?>
+										<div class="g-plusone" data-size="medium" data-annotation="none" data-href="/product.php?id=<?php echo $row["ID"] ?>"></div>
+									</div>
+								</div>
+
+							</div>
+					<?php
+						}
+					}
+					?>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+
+	<?php
+	include "sanphammoinhat.php"
+	?>
+
+
+</div>
+
+</div>
+</div>
+</div>
+<?php
+include "footer.php"
+?>
 </body>
+
 </html>

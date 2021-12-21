@@ -1,15 +1,26 @@
 {
-    "name": "secondtruth/startmin",
-    "description": "Admin dashboard template for Bootstrap",
-    "homepage": "http://www.secondtruth.de",
-    "keywords": ["backend", "admin", "template", "theme", "web"],
-    "license": "ISC",
-    "authors": [
-        {
-            "name": "Christian Neff",
-            "email": "christian.neff@gmail.com",
-            "homepage": "http://www.secondtruth.de",
-            "role": "Developer"
-        }
-    ]
+  "name": "almasaeed2010/adminlte",
+  "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+  "homepage": "http://almsaeedstudio.com/",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "responsive",
+    "back-end",
+    "template",
+    "theme",
+    "web",
+    "admin"
+  ],
+  "authors": [
+    {
+      "name": "Abdullah Almsaeed",
+      "email": "support@almsaeedstudio.com"
+    }
+  ],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/almasaeed2010/AdminLTE/issues"
+  }
 }
